@@ -1,0 +1,37 @@
+<script type="text/javascript" src="/javascripts/search.js"></script>
+<div style="float: left; width: 45%;">
+	<div class="row">
+		<div class="col-md-4 col-md-2">
+       		<div><h2 style="margin-left: 20px;">CATEGORIES</h2></div>
+        	<br>
+        	<ul class="list-group">
+				{{# each list}}
+				{{# each this}}
+				<li class="list-group-item">{{this.name}}
+                        <div class="material-switch pull-right">
+                            <input id="{{this.short_name}}" name="someSwitchOption001" type="checkbox" value="{{this.id}}" />
+                            <label for="{{this.short_name}}" class="label-danger"></label>
+                        </div>
+                </li>
+                {{/each}}
+                {{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="float: left; width: 55%;">
+	<div class="form-group">
+		<h3 class="display-3" align="left">Select any three catagories</h3>
+		<h6>at least one category must be selected</h6>
+		<br>
+		<h4>Search By location</h2>
+		<div class="col-md-3 mb-6">
+      <label for="validationDefault03">City</label>
+      <br>
+      <input type="text" id="validationDefault03" placeholder="City">
+    </div>	
+	</div>
+	<br>
+	<br>
+	<button class="btn btn-success" style="margin-left: 0px;" onclick="check()">Search Events</button>
+</div>
